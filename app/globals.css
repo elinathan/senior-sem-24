@@ -2,28 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  h1 {
+    @apply font-sans text-5xl font-medium tracking-tight antialiased;
   }
-}
+  h2 {
+    @apply pb-4 font-sans text-4xl font-medium tracking-[-0.02em] antialiased;
+  }
+  h3 {
+    @apply pb-4 font-sans text-2xl font-medium leading-tight antialiased;
+  }
+  p {
+    @apply max-w-xl pb-4 font-sans text-lg leading-[1.5] antialiased md:text-[1.0625rem];
+  }
+  small {
+    @apply max-w-xl text-base uppercase;
+  }
+  a {
+    @apply underline hover:text-blue-500 active:text-blue-700;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  ul {
+    @apply max-w-xl list-disc;
+  }
+  li {
+    @apply pb-1 text-lg md:text-[1.0625rem];
+  }
+  q {
+    @apply font-sans text-2xl leading-tight antialiased;
+  }
+  body {
+    @apply mx-4 mb-4 font-sans antialiased md:mx-12 md:mb-4;
+  }
 }
 
 @layer utilities {
