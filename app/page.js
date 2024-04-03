@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Cursor from "@/components/Cursor";
 import WordSearch from "@/components/WordSearch";
+import StudentNames from "@/components/StudentNames";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         University of Pennsylvania Design Senior Seminar Show
       </h2>
       <WordSearch fullText="KPWDEXFLETGNQUACSHVFKCLWROJYKRJUERZFAJANICEIAEHRXJULIANAKYRCLVEMKAILAHYLUIHIRSIWEARXHFRNSEBAHLALICEOTQEXLQYAAUQTNAPYHDKHIAANYBHAVKLCXQKRANBOTEMIREUHWAYNIEGAIDMIRBEESEDCCARWPARISDRYLROKBAKEJOELEEJOEUYEHBSRMDRPLOMWSARAHQOEMXZVF" />
+      <StudentNames />
     </main>
   );
 }
