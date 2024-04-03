@@ -6,9 +6,11 @@ export default function Home() {
   return (
     <main className="mx-auto mt-12 flex max-w-2xl flex-col gap-8">
       <Cursor />
+      <h1 className="text-center">Where Were We’re Wear</h1>
+      <h2 className="text-center text-2xl">
+        University of Pennsylvania Design Senior Seminar Show
+      </h2>
       <WordSearch fullText="KPWDEXFLETGNQUACSHVFKCLWROJYKRJUERZFAJANICEIAEHRXJULIANAKYRCLVEMKAILAHYLUIHIRSIWEARXHFRNSEBAHLALICEOTQEXLQYAAUQTNAPYHDKHIAANYBHAVKLCXQKRANBOTEMIREUHWAYNIEGAIDMIRBEESEDCCARWPARISDRYLROKBAKEJOELEEJOEUYEHBSRMDRPLOMWSARAHQOEMXZVF" />
-      {/* <h1>Hello World</h1>
-      <p>Lorem ipsum dolor sit amet</p> */}
     </main>
   );
 }

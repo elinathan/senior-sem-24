@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ["system-ui", "sans-serif"],
+      sans: ["futura-pt", "sans-serif"],
     },
     extend: {},
   },
