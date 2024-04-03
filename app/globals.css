@@ -61,4 +61,5 @@
   transform-origin: 50% 0;
   /* drop shadow */
   filter: drop-shadow(16px 16px 0.5rem #00000033);
+  overflow: hidden;
 }
