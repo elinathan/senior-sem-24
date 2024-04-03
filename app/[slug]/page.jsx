@@ -22,7 +22,6 @@ export default async function Page({ params }) {
   if (!post) notFound();
 
   const blocks = await fetchPageBlocks(post.id);
-  // console.log(blocks);
 
   const renderer = new NotionRenderer({
     client: notion,
