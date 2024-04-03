@@ -33,7 +33,7 @@
     @apply font-sans text-2xl leading-tight antialiased;
   }
   body {
-    @apply bg-texture mx-4 mb-4 !cursor-none font-sans antialiased md:mx-12 md:mb-4;
+    @apply bg-texture mx-4 mb-4 font-sans antialiased md:mx-12 md:mb-4 md:!cursor-none;
   }
 }
 
