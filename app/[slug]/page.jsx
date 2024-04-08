@@ -1,3 +1,4 @@
+import NextPrevProject from "@/components/NextPrevProject";
 import {
   fetchPageBlocks,
   fetchPageBySlug,
@@ -33,8 +34,17 @@ export default async function Page({ params }) {
   const html = await renderer.render(...blocks);
 
   return (
-    <main className="my-12">
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+    <main className="mx-auto my-12 max-w-2xl">
+      <NextPrevProject
+        nextSlug="tales-of-the-himalayas"
+        nextTitle="Rayah Iqbal"
+        prevSlug="tales-of-the-himalayas"
+        prevTitle="Rayah Iqbal"
+      />
+      <div
+        className="mx-auto flex flex-col has-[p]:pb-0"
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
     </main>
   );
 }

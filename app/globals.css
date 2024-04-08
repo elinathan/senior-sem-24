@@ -5,7 +5,7 @@
 
 @layer base {
   h1 {
-    @apply font-sans text-5xl font-medium tracking-tight antialiased;
+    @apply mb-4 font-sans text-5xl font-medium tracking-tight antialiased;
   }
   h2 {
     @apply pb-4 font-sans text-4xl font-medium tracking-[-0.02em] antialiased;
@@ -14,13 +14,13 @@
     @apply pb-4 font-sans text-2xl font-medium leading-tight antialiased;
   }
   p {
-    @apply max-w-xl pb-4 font-sans text-lg leading-[1.5] antialiased md:text-[1.0625rem];
+    @apply max-w-2xl pb-4 font-sans text-lg leading-[1.5] antialiased md:text-[1.0625rem];
   }
   small {
     @apply max-w-xl text-base uppercase;
   }
   a {
-    @apply underline hover:text-blue-500 active:text-blue-700;
+    @apply underline hover:text-red-500 active:text-red-700;
   }
 
   ul {
