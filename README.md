@@ -1,5 +1,5 @@
 # Welcome
-This is the source code for the Penn Design Senior Seminar Show for the Class of 2024. It is a [Next.js](https://nextjs.org/) project. Below are instructions on how to get it up and running for beginners.
+This is the source code for the Penn Design Senior Seminar Show for the Class of 2024. It is a [Next.js](https://nextjs.org/) project. Below are instructions on how to get it up and running.
 
 ### What is NextJS?
 
