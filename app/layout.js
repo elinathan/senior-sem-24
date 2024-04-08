@@ -1,4 +1,5 @@
 import "./globals.css";
+import Cursor from "@/components/Cursor";
 
 export const metadata = {
   title: "Senior Seminar 2024",
@@ -14,7 +15,11 @@ export default function RootLayout({ children }) {
           href="https://use.typekit.net/mqa7fao.css"
         ></link>
       </head>
-      <body>{children}</body>
+      <body>
+        {" "}
+        <Cursor />
+        {children}
+      </body>
     </html>
   );
 }

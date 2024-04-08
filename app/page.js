@@ -6,7 +6,6 @@ import StudentNames from "@/components/StudentNames";
 export default function Home() {
   return (
     <main className="mx-auto mt-12 flex max-w-3xl flex-col gap-8">
-      <Cursor />
       <h1 className="text-center text-3xl md:text-5xl">
         Where Were We’re Wear
       </h1>
