@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function StudentNames() {
   return (
     <div className="mx-auto grid grid-flow-col grid-rows-8 gap-x-4 md:w-[528px] md:grid-rows-6 md:text-lg">
@@ -7,7 +9,9 @@ export default function StudentNames() {
       <div className="">Rayah Iqbal</div>
       <div className="">Yune Kim</div>
       <div className="">Iris Lee</div>
-      <div className="">Eli Nathan</div>
+      <Link className="no-underline" href="/eli-nathan">
+        <div className="">Eli Nathan</div>
+      </Link>
       <div className="">Tarah Paul</div>
       <div className="text-red-500">Wear</div>
       <div className="">Rachel Shapiro</div>
