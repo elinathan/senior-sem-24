@@ -16,7 +16,7 @@ export default function Home() {
     );
   } else {
     wordSearchChars = Array.from(
-      "D0000000 S0000W0W G0000H0E N000WEAR 0000R00E 00WERE00".replace(
+      "D0000000 S0000W0W G0000H0E N000WEAR 00000R0E 00WERE00".replace(
         /\s/g,
         "",
       ),
