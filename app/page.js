@@ -30,6 +30,12 @@ export default function Home() {
 
   return (
     <main className="mt-12 flex w-full flex-col gap-8">
+      <div className="flex w-full flex-col">
+        <h1 className="ml-12 text-3xl md:text-5xl">Where Were We’re Wear</h1>
+        <h2 className="ml-12 text-xl md:text-2xl">
+          University of Pennsylvania Design Senior Seminar 2024
+        </h2>
+      </div>
       <div className="grid grid-cols-6 gap-y-4 md:grid-cols-8 md:gap-y-8">
         {wordSearchChars.map((letter, index) => {
           let wordSearchLetter;
@@ -46,13 +52,6 @@ export default function Home() {
           );
         })}
       </div>
-      <div className="flex w-full flex-col">
-        <h1 className="ml-12 text-3xl md:text-5xl">Where Were We’re Wear</h1>
-        <h2 className="ml-12 text-xl md:text-2xl">
-          University of Pennsylvania Design Senior Seminar 2024
-        </h2>
-      </div>
-
       <StudentNames />
     </main>
   );

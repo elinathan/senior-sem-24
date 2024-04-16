@@ -63,3 +63,11 @@
   filter: drop-shadow(16px 16px 0.5rem #00000033);
   overflow: hidden;
 }
+
+.pswp {
+  /* Needed to override photoswipe default styles  */
+  --pswp-bg: white !important;
+  --pswp-icon-color: #0008 !important;
+  --pswp-icon-stroke-color: #0008 !important;
+  --pswp-icon-stroke-width: 0 !important;
+}

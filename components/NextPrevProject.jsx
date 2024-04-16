@@ -8,7 +8,6 @@ export default function NextPrevProject({
   prevSlug,
   prevTitle,
 }) {
-  console.log(nextSlug, nextTitle, prevSlug, prevTitle);
   return (
     <div className="fixed bottom-0 left-0 right-0 p-4">
       <div className="flex justify-between">
