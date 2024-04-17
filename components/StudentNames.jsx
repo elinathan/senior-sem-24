@@ -25,7 +25,7 @@ export const studentNames = {
 
 export default function StudentNames() {
   return (
-    <div className="mx-auto grid grid-flow-col grid-rows-8 gap-x-4 md:w-[528px] md:grid-rows-6 md:text-lg">
+    <div className="mx-auto grid grid-flow-col grid-rows-6 gap-x-6 md:w-[528px] md:grid-rows-5 md:gap-x-4 md:text-lg">
       {studentNames.names.map((name, index) => (
         <Link
           className=" no-underline"
