@@ -71,7 +71,9 @@ export default async function Page({ params }) {
   renderer.use(hljsPlugin());
   renderer.use(bookmarkPlugin());
 
-  const html = await renderer.render(...blocks);
+  const [firstBlock, ...restBlocks] = blocks;
+  const titleBlock = await renderer.render(firstBlock);
+  const restBlocksHtml = await await renderer.render(...restBlocks);
 
   return (
     <>
@@ -83,16 +85,23 @@ export default async function Page({ params }) {
           prevSlug={prevStudent.toLowerCase().replace(" ", "-")}
           prevTitle={prevStudent}
         />
-        <h1 className="text-3xl md:text-5xl">{currentStudent}</h1>
+        <h1 className="mx-auto max-w-2xl text-3xl md:text-5xl">
+          {currentStudent}
+        </h1>
         <Gallery
-          className="flex w-full flex-col gap-8 md:flex-row md:justify-center"
+          className="mb-4 flex w-full flex-col gap-8 md:flex-row md:justify-center"
           images={images}
           equalHeight
           galleryID={`${params.slug}-gallery`}
         />
         <div
+          className="mx-auto flex max-w-2xl flex-col gap-2 text-2xl"
+          dangerouslySetInnerHTML={{ __html: titleBlock }}
+        ></div>
+        <StudentInfo student={pageInfo} />
+        <div
           className="mx-auto flex max-w-2xl flex-col gap-2 has-[p]:pb-0"
-          dangerouslySetInnerHTML={{ __html: html }}
+          dangerouslySetInnerHTML={{ __html: restBlocksHtml }}
         ></div>
       </main>
     </>
