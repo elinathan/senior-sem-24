@@ -2,6 +2,7 @@ import "./globals.css";
 import OGImage from "../public/og-image.png";
 
 export const metadata = {
+  metadataBase: new URL("https://wherewerewerewear.com"),
   title: {
     template: "%s | WHERE WE'RE WERE WEAR",
     default: "WHERE WE'RE WERE WEAR",
