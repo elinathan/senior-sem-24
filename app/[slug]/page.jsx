@@ -91,7 +91,7 @@ export default async function Page({ params }) {
   return (
     <>
       {/* <StudentInfo /> */}
-      <main className="mx-auto my-12 mb-32 ">
+      <main className="mx-auto my-20 mb-32 ">
         <NextPrevProject
           nextSlug={nextStudent.toLowerCase().replace(" ", "-")}
           nextTitle={nextStudent}
