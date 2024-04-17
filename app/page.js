@@ -5,7 +5,7 @@ import StudentNames from "@/components/StudentNames";
 
 export default function Home() {
   return (
-    <main className="my-20 flex w-full flex-col gap-8">
+    <main className="mb-20 mt-12 flex w-full flex-col gap-8">
       <div className="flex w-full flex-col">
         <h1 className="ml-3 text-2xl md:ml-12 md:text-5xl">
           WHERE WERE WE’RE WEAR

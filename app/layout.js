@@ -29,11 +29,7 @@ export default function RootLayout({ children }) {
           href="https://use.typekit.net/mqa7fao.css"
         ></link>
       </head>
-      <body>
-        {" "}
-        {/* <Cursor /> */}
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
