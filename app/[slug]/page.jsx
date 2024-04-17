@@ -15,6 +15,7 @@ import hljsPlugin from "@notion-render/hljs-plugin";
 import { notFound } from "next/navigation";
 import { studentNames } from "@/components/StudentNames";
 import Gallery from "@/components/Gallery";
+import { downloadImage } from "@/lib/image-handling";
 
 export async function generateStaticParams() {
   const posts = await fetchPages().then((res) => res.results);
@@ -29,48 +30,10 @@ export default async function Page({ params }) {
   if (!post) notFound();
 
   const pageInfo = await fetchPageInfoFromSlug(params.slug);
-  console.log(pageInfo);
+  // console.log(pageInfo);
 
   const blocks = await fetchPageBlocks(post.id);
   // console.log(blocks);
-
-  const images = await fetchImageBlocks(post.id);
-  const imagesWithSizes = await Promise.all(
-    images.map(async (image) => {
-      if (!image.file?.url) return null;
-      try {
-        const size = await probe(image.file.url);
-        return {
-          ...image,
-          width: size.width,
-          height: size.height,
-        };
-      } catch (error) {
-        console.error("Error fetching image size:", error);
-        return null;
-      }
-    }),
-  );
-
-  const imagesForGallery = imagesWithSizes
-    .filter((image) => image !== null)
-    .map((image) => ({
-      src: image.file.url || "",
-      width: image.width,
-      height: image.height,
-      alt: `${params.slug} project image`,
-    }));
-
-  console.log(imagesForGallery);
-
-  const renderer = new NotionRenderer({
-    client: notion,
-  });
-
-  renderer.use(hljsPlugin());
-  renderer.use(bookmarkPlugin());
-
-  const html = await renderer.render(...blocks);
 
   const studentNamesArray = studentNames.names;
   const currentIndex = studentNamesArray.findIndex(
@@ -86,6 +49,30 @@ export default async function Page({ params }) {
   const nextStudent = studentNamesArray[nextIndex];
   const prevStudent = studentNamesArray[prevIndex];
 
+  let imagesForGallery = await fetchImageBlocks(post.id);
+
+  for (const image of imagesForGallery) {
+    if (image === null) continue;
+    console.log("hello");
+    await downloadImage(
+      image.src,
+      `public/project_images/${currentStudent.replace(" ", "-").toLowerCase()}`,
+    );
+    image.src = `project_images/${currentStudent.replace(" ", "-").toLowerCase()}/${image.src.split("/").pop().split("?")[0]}`;
+    console.log(image.src);
+  }
+
+  const images = imagesForGallery;
+
+  const renderer = new NotionRenderer({
+    client: notion,
+  });
+
+  renderer.use(hljsPlugin());
+  renderer.use(bookmarkPlugin());
+
+  const html = await renderer.render(...blocks);
+
   return (
     <>
       {/* <StudentInfo /> */}
@@ -99,7 +86,7 @@ export default async function Page({ params }) {
         <h1 className="text-3xl md:text-5xl">{currentStudent}</h1>
         <Gallery
           className="flex w-full flex-col gap-8 md:flex-row md:justify-center"
-          images={imagesForGallery}
+          images={images}
           equalHeight
           galleryID={`${params.slug}-gallery`}
         />
