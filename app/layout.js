@@ -1,5 +1,4 @@
 import "./globals.css";
-import Cursor from "@/components/Cursor";
 
 export const metadata = {
   title: "Senior Seminar 2024",
