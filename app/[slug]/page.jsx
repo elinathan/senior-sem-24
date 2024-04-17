@@ -25,6 +25,19 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const studentNamesArray = studentNames.names;
+  const currentIndex = studentNamesArray.findIndex(
+    (name) => name.toLowerCase().replace(" ", "-") === params.slug,
+  );
+  const currentStudent = studentNamesArray[currentIndex];
+
+  return {
+    title: currentStudent,
+    description: "University of Pennsylvania Design Senior Seminar 2024",
+  };
+}
+
 export default async function Page({ params }) {
   const post = await fetchPageBySlug(params.slug);
   if (!post) notFound();

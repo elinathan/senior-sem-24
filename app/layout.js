@@ -1,8 +1,22 @@
 import "./globals.css";
+import OGImage from "../public/og-image.png";
 
 export const metadata = {
-  title: "Senior Seminar 2024",
-  description: "University of Pennsylvania Design",
+  title: {
+    template: "%s | WHERE WE'RE WERE WEAR",
+    default: "WHERE WE'RE WERE WEAR",
+  },
+  description: "University of Pennsylvania Design Senior Seminar 2024",
+  openGraph: {
+    images: [
+      {
+        url: OGImage.src,
+        width: OGImage.width,
+        height: OGImage.height,
+        alt: "WHERE WE'RE WERE WEAR",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
