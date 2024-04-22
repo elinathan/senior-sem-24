@@ -9,8 +9,9 @@ export default function StudentInfo({ student }) {
         <p className="p-0">{student.themes}</p>
       </div>
       <div className="flex flex-col gap-2 md:w-1/3 md:text-right">
-        <p className="p-0">{student.socialMediaHandles}</p>
-
+        {student.socialMediaHandles.length !== 0 && (
+          <p className="p-0">{student.socialMediaHandles}</p>
+        )}
         <Link
           href={`https://${student.portfolioSite}`}
           target="_blank"
@@ -18,13 +19,15 @@ export default function StudentInfo({ student }) {
         >
           {student.portfolioSite}
         </Link>
-        <Link
-          href={`https://${student.linkedin}`}
-          className="p-0"
-          target="_blank"
-        >
-          LinkedIn
-        </Link>
+        {student.linkedin.length !== 0 && (
+          <Link
+            href={`https://${student.linkedin}`}
+            className="p-0"
+            target="_blank"
+          >
+            LinkedIn
+          </Link>
+        )}
       </div>
     </div>
   );
