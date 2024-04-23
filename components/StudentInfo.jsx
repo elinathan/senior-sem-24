@@ -6,7 +6,7 @@ export default function StudentInfo({ student }) {
       <div className=" flex flex-col gap-2 md:w-2/3">
         <p className="p-0">{student.category}</p>
         <p className="p-0">{student.medium}</p>
-        <p className="p-0">{student.themes}</p>
+        {student.themes.length !== 0 && <p className="p-0">{student.themes}</p>}
       </div>
       <div className="flex flex-col gap-2 md:w-1/3 md:text-right">
         {student.socialMediaHandles.length !== 0 && (
