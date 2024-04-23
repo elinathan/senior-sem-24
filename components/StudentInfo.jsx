@@ -12,13 +12,15 @@ export default function StudentInfo({ student }) {
         {student.socialMediaHandles.length !== 0 && (
           <p className="p-0">{student.socialMediaHandles}</p>
         )}
-        <Link
-          href={`https://${student.portfolioSite}`}
-          target="_blank"
-          className="p-0"
-        >
-          {student.portfolioSite}
-        </Link>
+        {student.portfolioSite.length !== 0 && (
+          <Link
+            href={`https://${student.portfolioSite}`}
+            target="_blank"
+            className="p-0"
+          >
+            {student.portfolioSite}
+          </Link>
+        )}
         {student.linkedin.length !== 0 && (
           <Link
             href={`https://${student.linkedin}`}
