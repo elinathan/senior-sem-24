@@ -14,7 +14,7 @@ export default function StudentInfo({ student }) {
         )}
         {student.portfolioSite.length !== 0 && (
           <Link
-            href={`https://${student.portfolioSite}`}
+            href={`${student.portfolioSite}`}
             target="_blank"
             className="p-0"
           >
@@ -22,11 +22,7 @@ export default function StudentInfo({ student }) {
           </Link>
         )}
         {student.linkedin.length !== 0 && (
-          <Link
-            href={`https://${student.linkedin}`}
-            className="p-0"
-            target="_blank"
-          >
+          <Link href={`${student.linkedin}`} className="p-0" target="_blank">
             LinkedIn
           </Link>
         )}
