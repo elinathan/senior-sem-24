@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function StudentInfo({ student }) {
   return (
     <div className="mx-auto mb-4 flex max-w-2xl flex-col justify-between md:flex-row md:gap-4">
@@ -13,18 +11,14 @@ export default function StudentInfo({ student }) {
           <p className="p-0">{student.socialMediaHandles}</p>
         )}
         {student.portfolioSite.length !== 0 && (
-          <Link
-            href={`${student.portfolioSite}`}
-            target="_blank"
-            className="p-0"
-          >
+          <a href={`${student.portfolioSite}`} target="_blank" className="p-0">
             {student.portfolioSite}
-          </Link>
+          </a>
         )}
         {student.linkedin.length !== 0 && (
-          <Link href={`${student.linkedin}`} className="p-0" target="_blank">
+          <a href={`${student.linkedin}`} className="p-0" target="_blank">
             LinkedIn
-          </Link>
+          </a>
         )}
       </div>
     </div>

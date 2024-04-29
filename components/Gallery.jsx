@@ -34,7 +34,7 @@ export default function Gallery(props) {
 
   const specialStyles = (aspectRatio) => {
     if (props.equalHeight && !isMobile) {
-      return { flex: aspectRatio };
+      return { flex: aspectRatio, maxWidth: `${550 * aspectRatio}px` };
     }
     if (props.singleColumn && aspectRatio < 1) {
       return { maxHeight: "750px" };
@@ -68,7 +68,9 @@ export default function Gallery(props) {
               width={width}
               height={height}
               priority={priority}
-              className={props.equalHeight ? "noMobileSpecialStyle" : ""}
+              className={
+                props.equalHeight ? "noMobileSpecialStyle md:max-h-[550px]" : ""
+              }
               sizes={sizes}
             />
           </a>
@@ -80,6 +82,7 @@ export default function Gallery(props) {
             object-fit: initial !important;
             width: initial !important;
             max-height: initial !important;
+            max-width: initial !important;
           }
         }
       `}</style>
