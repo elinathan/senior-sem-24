@@ -16,6 +16,20 @@ export default function Home() {
       </div>
       <WordSearch />
       <StudentNames />
+      <div className="mx-auto max-w-[528px]">
+        <h3>The Show</h3>
+        <p>
+          WHERE, WEAR, WE’RE, WERE, the 2024 Senior Design Exhibition at the
+          University of Pennsylvania, marks the culmination of our
+          interdisciplinary studies as Design majors.
+        </p>
+        <p>
+          We present works spanning from physical publications to digital
+          landscapes. “Where” explores locations and cultures, “we’re” reflects
+          on togetherness and social impact, “wear” examines materiality and the
+          body, and “were” analyzes time and memory.
+        </p>
+      </div>
     </main>
   );
 }
